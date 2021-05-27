@@ -16,6 +16,8 @@ static int deminer(int left, int top, int topleft)
         return top;
     if (topleft <= top && topleft <= left)
         return topleft;
+
+    return 0;
 }
 
 static int **convert_char_to_int(char **map)

@@ -22,7 +22,7 @@ void my_free(char **map, int **tab)
     free(map);
 }
 
-static int error_handling(int ac, char **av)
+static int error_handling(int ac)
 {
     if (ac != 2) {
         write(1, "Miss an argument\n", 17);
@@ -39,7 +39,7 @@ int main(int ac, char **av)
     data_bsq.x = 0;
     data_bsq.y = 0;
 
-    if (error_handling(ac, av) == error)
+    if (error_handling(ac) == error)
         return exit_error;
     map = open_map(av[1]);
     if (map == NULL)

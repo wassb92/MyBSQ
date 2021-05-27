@@ -15,6 +15,7 @@ SRC	=	src/main.c	\
 OBJ	=	$(SRC:.c=.o)
 RM	=	rm -f
 CFLAGS	+=	-I./include/ -L./
+ERROR	=	 -Wall -Wextra
 DEBUG	=	-g3
 
 NAME	=	bsq \
@@ -22,7 +23,7 @@ NAME	=	bsq \
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -o $(NAME) $(CFLAGS) $(SRC)
+	gcc -o $(NAME) $(CFLAGS) $(ERROR) $(SRC)
 
 .PHONY:	clean fclean re
 
